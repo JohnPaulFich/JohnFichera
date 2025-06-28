@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Fichera - Digital Marketing & Creative Expert</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #454546;
+            background: linear-gradient(135deg, #41AF49 0%, #3498db 50%, #d8ead3 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(65, 175, 73, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(52, 152, 219, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 60% 30%, rgba(216, 234, 211, 0.15) 0%, transparent 50%);
+            animation: backgroundFloat 20s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes backgroundFloat {
+            0%, 100% {
+                transform: translateX(0) translateY(0) scale(1);
+            }
+            25% {
+                transform: translateX(20px) translateY(-30px) scale(1.05);
+            }
+            50% {
+                transform: translateX(-10px) translateY(20px) scale(0.95);
+            }
+            75% {
+                transform: translateX(30px) translateY(-10px) scale(1.02);
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .resume-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #454546, #41AF49);
+            color: #ffffff;
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 12px,
+                rgba(255, 255, 255, 0.08) 12px,
+                rgba(255, 255, 255, 0.08) 24px
+            );
+            animation: slide 25s linear infinite;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 40%, rgba(65, 175, 73, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 60%, rgba(52, 152, 219, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 80%, rgba(216, 234, 211, 0.2) 0%, transparent 50%);
+            animation: backgroundPulse 15s ease-in-out infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(-50px) translateY(-50px); }
+            100% { transform: translateX(50px) translateY(50px); }
+        }
+
+        @keyframes backgroundPulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            33% {
+                opacity: 0.8;
+                transform: scale(1.1);
+            }
+            66% {
+                opacity: 0.9;
+                transform: scale(0.95);
+            }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .name {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .title {
+            font-size: 1.5rem;
+            color: #d8ead3;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-icon {
+            width: 18px;
+            height: 18px;
+            fill: #d8ead3;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            padding: 40px;
+        }
+
+        .sidebar {
+            space-y: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.2s; }
+        .section:nth-child(2) { animation-delay: 0.4s; }
+        .section:nth-child(3) { animation-delay: 0.6s; }
+        .section:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            color: #454546;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #41AF49;
+            position: relative;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #3498db;
+            transition: width 0.6s ease;
+        }
+
+        .section:hover .section-title::after {
+            width: 100%;
+        }
+
+        .profile-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #454546;
+            text-align: justify;
+            font-weight: 400;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #d8ead3;
+            color: #454546;
+            padding: 10px 16px;
+            border-radius: 25px;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(216, 234, 211, 0.6);
+            background: #41AF49;
+            color: #ffffff;
+        }
+
+        .education-item {
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 15px;
+            border-left: 5px solid #41AF49;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .education-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .degree {
+            font-weight: 600;
+            color: #454546;
+            font-size: 1.1rem;
+        }
+
+        .school {
+            color: #41AF49;
+            font-weight: 600;
+            margin: 8px 0;
+        }
+
+        .date {
+            color: #3498db;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .experience-item {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 18px;
+            margin-bottom: 28px;
+            border-left: 6px solid #41AF49;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(65, 175, 73, 0.08), rgba(216, 234, 211, 0.15));
+            transition: width 0.6s ease;
+            z-index: 0;
+        }
+
+        .experience-item:hover::before {
+            width: 100%;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .experience-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #454546;
+            margin-bottom: 6px;
+            letter-spacing: 0.3px;
+        }
+
+        .company {
+            color: #41AF49;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+
+        .job-date {
+            color: #3498db;
+            font-style: italic;
+            margin-bottom: 18px;
+            font-weight: 400;
+        }
+
+        .responsibilities {
+            list-style: none;
+            padding: 0;
+        }
+
+        .responsibilities li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .responsibilities li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #41AF49;
+            font-size: 0.8rem;
+        }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 35px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 12px;
+            border-radius: 60px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-tab {
+            padding: 12px 24px;
+            background: transparent;
+            border: 2px solid #41AF49;
+            border-radius: 30px;
+            color: #41AF49;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-tab.active,
+        .nav-tab:hover {
+            background: #41AF49;
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(65, 175, 73, 0.3);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .floating-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            animation: float 18s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Skill Modal Styles */
+        .skill-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(69, 69, 70, 0.8);
+            backdrop-filter: blur(8px);
+        }
+
+        .skill-modal-content {
+            background: #ffffff;
+            margin: 5% auto;
+            padding: 35px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            animation: modalSlideIn 0.4s ease-out;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .skill-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #d8ead3;
+        }
+
+        .skill-modal-title {
+            font-size: 1.5rem;
+            color: #454546;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: #454546;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-modal:hover {
+            background: #d8ead3;
+            transform: rotate(90deg);
+        }
+
+        .skill-modal-body {
+            margin-bottom: 25px;
+        }
+
+        .skill-description {
+            font-size: 1.1rem;
+            color: #454546;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .skill-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .skill-action-btn {
+            padding: 12px 24px;
+            border: 2px solid #41AF49;
+            border-radius: 25px;
+            background: transparent;
+            color: #41AF49;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .skill-action-btn:hover {
+            background: #41AF49;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(65, 175, 73, 0.3);
+        }
+
+        .skill-action-btn.secondary {
+            border-color: #3498db;
+            color: #3498db;
+        }
+
+        .skill-action-btn.secondary:hover {
+            background: #3498db;
+            color: #ffffff;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .name {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                gap: 15px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+
+            .nav-tabs {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-particles" id="particles"></div>
+    
+    <div class="container">
+        <div class="resume-card">
+            <header class="header">
+                <div class="header-content">
+                    <h1 class="name">JOHN FICHERA</h1>
+                    <p class="title">Digital Marketing & Creative Expert</p>
+                    <div class="contact-info">
+                        <div class="contact-item" onclick="window.open('tel:781-439-5089')">
+                            <svg class="contact-icon" viewBox="0 0 24 24">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            <span>781-439-5089</span>
+                        </div>
+                        <div class="contact-item" onclick="window.open('mailto:jpfichera@gmail.com')">
+                            <svg class="contact-icon" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            <span>jpfichera@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="nav-tabs">
+                <button class="nav-tab active" onclick="showTab('overview')">Overview</button>
+                <button class="nav-tab" onclick="showTab('experience')">Experience</button>
+                <button class="nav-tab" onclick="showTab('additional')">Additional Experience</button>
+            </div>
+
+            <div class="main-content">
+                <aside class="sidebar">
+                    <section class="section">
+                        <h2 class="section-title">Profile</h2>
+                        <p class="profile-text">
+                            I'm a versatile, communicative, and endlessly curious marketing professional. Throughout my career, I've worked with industries and audiences that have given me the opportunity to provide engaging customer experiences in a variety of channels. Driven to meet the challenge of our ever-changing marketing landscape while maintaining brand voices.
+                        </p>
+                    </section>
+
+                    <section class="section">
+                        <h2 class="section-title">Skills</h2>
+                        <div class="skills-grid">
+                            <div class="skill-tag" onclick="openSkillModal('Analytics')">Analytics</div>
+                            <div class="skill-tag" onclick="openSkillModal('Copywriting')">Copywriting</div>
+                            <div class="skill-tag" onclick="openSkillModal('UI/UX Design')">UI/UX Design</div>
+                            <div class="skill-tag" onclick="openSkillModal('Email Marketing')">Email Marketing</div>
+                            <div class="skill-tag" onclick="openSkillModal('SQL')">SQL</div>
+                            <div class="skill-tag" onclick="openSkillModal('Photoshop')">Photoshop</div>
+                            <div class="skill-tag" onclick="openSkillModal('Web Design')">Web Design</div>
+                            <div class="skill-tag" onclick="openSkillModal('Graphic Design')">Graphic Design</div>
+                            <div class="skill-tag" onclick="openSkillModal('SEO')">SEO</div>
+                            <div class="skill-tag" onclick="openSkillModal('Illustrator')">Illustrator</div>
+                            <div class="skill-tag" onclick="openSkillModal('After Effects')">After Effects</div>
+                            <div class="skill-tag" onclick="openSkillModal('inDesign')">inDesign</div>
+                            <div class="skill-tag" onclick="openSkillModal('HTML')">HTML</div>
+                            <div class="skill-tag" onclick="openSkillModal('CSS')">CSS</div>
+                            <div class="skill-tag" onclick="openSkillModal('JavaScript')">JavaScript</div>
+                            <div class="skill-tag" onclick="openSkillModal('Python')">Python</div>
+                            <div class="skill-tag" onclick="openSkillModal('Video Editing')">Video Editing</div>
+                            <div class="skill-tag" onclick="openSkillModal('Vendor Management')">Vendor Management</div>
+                            <div class="skill-tag" onclick="openSkillModal('Content Management Systems')">Content Management Systems</div>
+                            <div class="skill-tag" onclick="openSkillModal('Microsoft Office')">Microsoft Office</div>
+                            <div class="skill-tag" onclick="openSkillModal('Iterable')">Iterable</div>
+                            <div class="skill-tag" onclick="openSkillModal('WordPress')">WordPress</div>
+                        </div>
+                    </section>
+
+                    <section class="section">
+                        <h2 class="section-title">Education</h2>
+                        <div class="education-item">
+                            <div class="degree">Bachelor of Science, Communication</div>
+                            <div class="school">BOSTON UNIVERSITY</div>
+                            <div class="date">September 2008 - May 2012</div>
+                        </div>
+                    </section>
+                </aside>
+
+                <main class="content">
+                    <div id="overview" class="tab-content active">
+                        <section class="section">
+                            <h2 class="section-title">Current Experience</h2>
+                            <div class="experience-item">
+                                <div class="experience-content">
+                                    <h3 class="job-title">Sr. Digital Marketing Specialist</h3>
+                                    <div class="company">Camden National Bank</div>
+                                    <div class="job-date">April 2019 – Present</div>
+                                    <ul class="responsibilities">
+                                        <li>Execute engaging, data-driven email campaigns and automated journeys with the goal of deepening customer relationships and reaching prospects to convert them into lifelong customers.</li>
+                                        <li>Develop digital content strategy and align with strategic priorities, ensuring accuracy, quality and brand consistency.</li>
+                                        <li>Research segmentation and automation opportunities, as well as new strategies for pulling accurate customer data.</li>
+                                        <li>Conduct routine website evaluations as needed to keep content fresh, including mocking up new UX ideas/concepts into visual designs.</li>
+                                        <li>Perform all requested content updates to marketing websites.</li>
+                                        <li>Measure, monitor and report on email and website performance metrics, highlighting successes, trends and opportunities.</li>
+                                        <li>Manage digital vendor relationships, ensuring site uptime, timely delivery of projects and updates, and compliance.</li>
+                                        <li>Develop digital creative for campaigns, including prospect emails, digital ads, landing page creation, and tracking for conversions.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div id="experience" class="tab-content">
+                        <section class="section">
+                            <h2 class="section-title">Professional Experience</h2>
+                            
+                            <div class="experience-item">
+                                <div class="experience-content">
+                                    <h3 class="job-title">Sr. Digital Marketing Specialist</h3>
+                                    <div class="company">Vermont Law School</div>
+                                    <div class="job-date">January 2017 – April 2019</div>
+                                    <ul class="responsibilities">
+                                        <li>Develop landing pages for ad campaigns, marketing emails for prospective students, and web pages for public site.</li>
+                                        <li>Lead admissions email campaigns, email template building, copywriting, scheduling, automation, and segmentation.</li>
+                                        <li>Train and moderate users on content management system. Act as point of contact for all web requests from faculty, students and staff, and manage communications with school's Drupal developers.</li>
+                                        <li>Update website with best SEO practices and troubleshoot issues such as 4xx's and meta tag errors.</li>
+                                        <li>Optimize Google AdWords campaigns for most efficient spending, maintaining negative keyword list and bid adjustments.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div id="additional" class="tab-content">
+                        <section class="section">
+                            <h2 class="section-title">Additional Experience</h2>
+                            
+                            <div class="experience-item">
+                                <div class="experience-content">
+                                    <h3 class="job-title">Integrated Marketing Coordinator</h3>
+                                    <div class="company">Emmanuel College</div>
+                                    <div class="job-date">November 2014 – January 2017</div>
+                                    <ul class="responsibilities">
+                                        <li>Collaborate with a range of Emmanuel College stakeholders to create content and coordinate marketing and communications campaigns for various programs.</li>
+                                        <li>Build and test weekly email campaigns for a variety of internal clients including Admissions, Development and Alumni Relations.</li>
+                                        <li>Add new content to the website and make edits to ensure that the website remains up-to-date and on strategy.</li>
+                                        <li>Film and edit short videos and other multimedia content in support of College programs, events, and priorities.</li>
+                                        <li>Ensure marketing and communications strategies are effective in the delivery of the Emmanuel brand and messaging.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="experience-item">
+                                <div class="experience-content">
+                                    <h3 class="job-title">Web Producer & Digital Marketing Associate</h3>
+                                    <div class="company">MITX</div>
+                                    <div class="job-date">October 2013 – July 2014</div>
+                                    <ul class="responsibilities">
+                                        <li>Design collateral for MITX, BIMA, and FutureM events, including on-site handouts, PowerPoint presentations, banners, and signs.</li>
+                                        <li>Design online content for MITX, BIMA, and FutureM brands, covering items such as web banners, email graphics, event and company logos.</li>
+                                        <li>Control online content using an array of content management systems as well as CRMs and scheduling assistants.</li>
+                                        <li>Work with developers to address and solve web functionality issues.</li>
+                                        <li>Create and design email layouts and contribute to weekly newsletter editing.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="experience-item">
+                                <div class="experience-content">
+                                    <h3 class="job-title">Jr. Marketing Communications Associate</h3>
+                                    <div class="company">Continental Resources</div>
+                                    <div class="job-date">January 2013 – October 2013</div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skill Modal -->
+    <div id="skillModal" class="skill-modal">
+        <div class="skill-modal-content">
+            <div class="skill-modal-header">
+                <h3 id="skillModalTitle" class="skill-modal-title"></h3>
+                <button class="close-modal" onclick="closeSkillModal()">×</button>
+            </div>
+            <div class="skill-modal-body">
+                <p id="skillDescription" class="skill-description"></p>
+                <div class="skill-actions">
+                    <button class="skill-action-btn" onclick="showExample()">View Example</button>
+                    <button class="skill-action-btn secondary" onclick="showWork()">See My Work</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Skill data object
+        var skillData = {
+            'Analytics': {
+                description: 'Proficient in web analytics, email performance metrics, and data-driven decision making. Experienced with Google Analytics, email campaign analytics, and conversion tracking.',
+                example: 'Implemented A/B testing that improved email open rates by 35%',
+                work: 'At Camden National Bank, I regularly analyze email campaign performance and website metrics to optimize customer engagement strategies.'
+            },
+            'Copywriting': {
+                description: 'Expert in creating compelling marketing copy for emails, websites, and digital campaigns that drives engagement and conversions.',
+                example: 'Wrote email series that increased customer retention by 28%',
+                work: 'Created all email campaign copy and web content for Vermont Law School admissions campaigns.'
+            },
+            'UI/UX Design': {
+                description: 'Skilled in user interface and experience design, creating intuitive and engaging digital experiences across web and mobile platforms.',
+                example: 'Redesigned landing page that increased conversion rate by 45%',
+                work: 'Mock up new UX concepts and visual designs for Camden National Bank marketing websites.'
+            },
+            'Email Marketing': {
+                description: 'Advanced expertise in email campaign strategy, automation, segmentation, and performance optimization using platforms like Iterable.',
+                example: 'Built automated journey that generated $2M in additional revenue',
+                work: 'Execute data-driven email campaigns and automated journeys for Camden National Bank customers and prospects.'
+            },
+            'SQL': {
+                description: 'Database querying and data analysis for customer segmentation, campaign targeting, and performance reporting.',
+                example: 'Created customer segmentation queries that improved targeting accuracy by 40%',
+                work: 'Research segmentation opportunities and pull accurate customer data for marketing campaigns.'
+            },
+            'Photoshop': {
+                description: 'Advanced photo editing and digital image creation for marketing materials, web graphics, and campaign assets.',
+                example: 'Created visual campaign assets that increased social engagement by 60%',
+                work: 'Develop digital creative for campaigns including email graphics and digital advertisements.'
+            },
+            'Web Design': {
+                description: 'Full-stack web design including layout, visual design, and user experience optimization for marketing websites.',
+                example: 'Designed responsive website that improved mobile conversion by 50%',
+                work: 'Perform content updates and UX improvements to Camden National Bank marketing websites.'
+            },
+            'Graphic Design': {
+                description: 'Visual design for print and digital media including logos, brochures, presentations, and marketing collateral.',
+                example: 'Created brand identity that increased brand recognition by 35%',
+                work: 'Design collateral for events, presentations, banners, and informational materials.'
+            },
+            'SEO': {
+                description: 'Search engine optimization including keyword research, on-page optimization, and technical SEO improvements.',
+                example: 'SEO improvements that increased organic traffic by 85%',
+                work: 'Update websites with best SEO practices and troubleshoot technical issues like 4xx errors and meta tags.'
+            },
+            'Illustrator': {
+                description: 'Vector graphics and illustration design for logos, icons, and scalable marketing materials.',
+                example: 'Created icon set that improved user interface clarity by 40%',
+                work: 'Design logos, icons, and vector graphics for marketing campaigns and brand materials.'
+            },
+            'After Effects': {
+                description: 'Motion graphics and animation for video content, promotional materials, and interactive media.',
+                example: 'Animated explainer video that increased product understanding by 65%',
+                work: 'Create animated content and motion graphics for marketing videos and presentations.'
+            },
+            'inDesign': {
+                description: 'Professional layout design for print and digital publications, brochures, and marketing materials.',
+                example: 'Designed annual report that won regional design award',
+                work: 'Create print materials, brochures, and professional documents for marketing campaigns.'
+            },
+            'HTML': {
+                description: 'Semantic markup and web structure development for responsive websites and email templates.',
+                example: 'Built responsive email template with 98% client compatibility',
+                work: 'Code HTML structure for websites, landing pages, and email campaigns.'
+            },
+            'CSS': {
+                description: 'Advanced styling and responsive design for modern web interfaces and user experiences.',
+                example: 'CSS animations that increased user engagement time by 45%',
+                work: 'Style websites and create responsive designs for marketing landing pages.'
+            },
+            'JavaScript': {
+                description: 'Front-end development using JavaScript for interactive web experiences and marketing automation.',
+                example: 'Built interactive calculator that increased lead generation by 75%',
+                work: 'Implement tracking scripts and interactive elements for marketing campaigns.'
+            },
+            'Python': {
+                description: 'Data analysis and automation scripting for marketing operations and campaign optimization.',
+                example: 'Automated reporting system that saved 20 hours per week',
+                work: 'Develop scripts for data processing and campaign performance analysis.'
+            },
+            'Video Editing': {
+                description: 'Video production and editing for marketing content, including promotional videos, educational content, and social media.',
+                example: 'Created video series that generated 1M+ views across platforms',
+                work: 'Film and edit short videos and multimedia content for college programs and marketing initiatives.'
+            },
+            'Vendor Management': {
+                description: 'Strategic vendor relationship management ensuring project delivery, compliance, and performance optimization.',
+                example: 'Vendor optimization that reduced costs by 25% while improving delivery time',
+                work: 'Manage digital vendor relationships at Camden National Bank, ensuring compliance and timely project delivery.'
+            },
+            'Content Management Systems': {
+                description: 'Expert in various CMS platforms including WordPress, Drupal, and custom systems for content management.',
+                example: 'Streamlined CMS workflow that reduced content update time by 60%',
+                work: 'Manage content across multiple CMS platforms and train users on system usage.'
+            },
+            'Microsoft Office': {
+                description: 'Advanced proficiency in the complete Office suite for presentations, data analysis, and document creation.',
+                example: 'Created data dashboard that improved reporting efficiency by 50%',
+                work: 'Develop presentations, analyze data, and create professional documentation.'
+            },
+            'Iterable': {
+                description: 'Advanced email marketing automation platform for sophisticated customer journey management.',
+                example: 'Built cross-channel campaign that increased customer lifetime value by 30%',
+                work: 'Manage email automation workflows and customer journey campaigns using Iterable platform.'
+            },
+            'WordPress': {
+                description: 'Full WordPress development including theme customization, plugin management, and site optimization.',
+                example: 'WordPress site optimization that improved page speed by 70%',
+                work: 'Develop and maintain WordPress websites with custom functionality and optimizations.'
+            }
+        };
+
+        // Skill modal functions
+        function openSkillModal(skillName) {
+            var modal = document.getElementById('skillModal');
+            var title = document.getElementById('skillModalTitle');
+            var description = document.getElementById('skillDescription');
+            
+            var skill = skillData[skillName];
+            if (skill) {
+                title.textContent = skillName;
+                description.textContent = skill.description;
+                modal.style.display = 'block';
+                modal.dataset.currentSkill = skillName;
+            }
+        }
+
+        function closeSkillModal() {
+            document.getElementById('skillModal').style.display = 'none';
+        }
+
+        function showExample() {
+            var currentSkill = document.getElementById('skillModal').dataset.currentSkill;
+            var skill = skillData[currentSkill];
+            if (skill) {
+                alert('Example: ' + skill.example);
+            }
+        }
+
+        function showWork() {
+            var currentSkill = document.getElementById('skillModal').dataset.currentSkill;
+            var skill = skillData[currentSkill];
+            if (skill) {
+                alert('My Work: ' + skill.work);
+            }
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            var modal = document.getElementById('skillModal');
+            if (event.target === modal) {
+                closeSkillModal();
+            }
+        };
+
+        // Tab functionality
+        function showTab(tabName) {
+            var contents = document.querySelectorAll('.tab-content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('active');
+            }
+            
+            var tabs = document.querySelectorAll('.nav-tab');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
+            
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Floating particles animation
+        function createParticles() {
+            var particlesContainer = document.getElementById('particles');
+            var particleCount = 40;
+            
+            for (var i = 0; i < particleCount; i++) {
+                var particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 18 + 's';
+                particle.style.animationDuration = (Math.random() * 12 + 15) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Enhanced initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            
+            var observer = new IntersectionObserver(function(entries) {
+                for (var i = 0; i < entries.length; i++) {
+                    if (entries[i].isIntersecting) {
+                        entries[i].target.style.animationPlayState = 'running';
+                    }
+                }
+            });
+            
+            var sections = document.querySelectorAll('.section');
+            for (var i = 0; i < sections.length; i++) {
+                observer.observe(sections[i]);
+            }
+
+            var skillTags = document.querySelectorAll('.skill-tag');
+            for (var i = 0; i < skillTags.length; i++) {
+                skillTags[i].addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-4px) scale(1.05)';
+                });
+                
+                skillTags[i].addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
